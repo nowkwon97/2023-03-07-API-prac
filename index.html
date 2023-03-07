@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="root"></div>
-  <img src="" alt="">
+  
   <!-- ! 랜덤으로 포켓몬 이미지를 불러 오는 방법..? -->
   <!-- ! 포켓몬 API에서 img경로를 찾아 준다 -->
   <!-- ! 랜덤함수를 사용하여 img파일의 번호(각 포켓몬의 번호)를 추출한다. -->
@@ -21,6 +21,8 @@
     console.log(randomPoketmonNumber);
 
     const xhr = new XMLHttpRequest();
+    // 기본 URL에 랜덤의 수를 반환해주는 함수를 붙인다.
+    // 랜덤으로 포켓몬의 정보를 가져다주는 URL 확보
     const _URL = 'https://pokeapi.co/api/v2/pokemon/' + randomPoketmonNumber;
     xhr.open('GET', _URL);
     xhr.send();
@@ -34,9 +36,6 @@
       // 이미지 경로 콘솔로 확인
       console.log(dittoImg);
 
-      
-
-      // let randomURL = _URL + randomPoketmonNumber;
       // 화면에 출력하는 태그 부분
       const poketmonImg = document.createElement('div');
       const poketmonName = document.createElement('h1');
